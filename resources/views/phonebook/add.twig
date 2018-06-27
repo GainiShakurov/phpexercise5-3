@@ -1,0 +1,19 @@
+{% extends('layout.html') %}
+
+{% block content %}
+    <h3 class="col-md-12">Добавить новую запись</h3>
+
+    <form action="{{ route('addrecord') }}" class="col-md-4" method="post">
+        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+            <input type="text" class="form-control" name="fio" value="" placeholder="ФИО" required />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="phone" value="" placeholder="Телефон" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Добавить"/>
+        </div>
+    </form>
+
+{% endblock content %}
